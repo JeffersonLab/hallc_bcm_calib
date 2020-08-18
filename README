@@ -1,0 +1,40 @@
+
+
+1) CERN ROOT veriosn : 6.10.02 works fine 
+
+2) input file : the code expects the input file in txt/dat format 
+   this file should have two columns as follows :
+
+          column 1             column 2
+   row 1  start of 1st dip     end of 1st dip
+
+   row 2  start of 1st peak    end of 1st peak
+
+   row 3  start of 2nd dip     end of 2nd dip
+
+
+3) command to run : root -l <file_name.C>
+
+4) key borad inputs : The way this code is written this expects some inputs from key borad.
+
+  A) text file name as <filename.txt> as mentioned in (2).
+
+  B) run number 
+
+  c) Date : at which date the run was taken , as this time line is important in
+     BCM Calibration. 
+
+  d) BCM : input BCM Name for which you want to Draw the calibration plots 
+     Right Now Hall C has 5 BCMs : BCM1, BCM2, BCM4A, BCM4B, BCM4C.
+
+5) Output : Two plots will be produced  
+
+  A) First one is a two Pannel Plot : Pannel 1-> BCM Rate vs Scaler Time.
+     Pannel 2-> will have Unser Rate vs Scaler Time.
+
+  B) Second one is 4 pannel plot : Pannel 1-> BCM frequency vs Unser Current
+     p0-> Gain and p1->Offset of the linear fit are the required gain and 
+     offset for gscaler file to update.
+     Pannel 2-> Residual vs Unser Current
+     Pannel 3-> % Residual vs Unser Current
+     Pannel 4-> Residual vs Scaler Time
